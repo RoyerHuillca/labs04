@@ -32,7 +32,7 @@ const cargarTareas = () => {
 document.addEventListener('DOMContentLoaded', () => {
     tareas = cargarTareas();
     renderTareas();
-})
+});
 
 const guardarTareas = () => {
   try {
