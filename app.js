@@ -24,11 +24,15 @@ const cargarTareas = () => {
     const datos = JSON.parse(localStorage.getItem(STORAGE_KEY));
     return Array.isArray(datos) ? datos : [];
   } catch (error) {
-    // JSON corrupto o almacenamiento no disponible: se parte de una lista vacía
     console.warn('No se pudo leer localStorage:', error);
     return [];
   }
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    tareas = cargarTareas();
+    renderTareas();
+})
 
 const guardarTareas = () => {
   try {
